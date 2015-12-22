@@ -27,13 +27,6 @@ module.exports = Job(function(){
 }, '*/2 * * * * *');
 ```
 
-在指定时间运行一次
-```js
-module.exports = Job(function(){
-
-}, '0 0 0 31 12 2015');
-```
-
 - 有关运行计划时间设置参考项目 [node-cron](https://github.com/ncb000gt/node-cron)
 
 ## License
