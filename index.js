@@ -1,11 +1,32 @@
 'use strict';
 
 var fs = require('fs'),
-    path = require('path'),
+    path = require('path');
 
-    jobs = fs.readdirSync('./jobs');
+/**
+ * Require jobs
+ * @param {String} parent [Jobs root directory.]
+ */
+function Jobs(parent){
+    parent = parent || './jobs';
+    var files = [];
+    var list = fs.readdirSync(parent);
+    for(var item of list) {
+        var uri = path.join(parent, item);
+        if (fs.statSync(uri).isDirectory()) {
+            files = files.concat(Jobs(uri));
+        }
+        else {
+            files.push(uri);
+        }
+    }
+    return files;
+}
 
-jobs.forEach(function(f){
-    var job = require(path.join(__dirname, './jobs', f));
+/**
+ * Run Jobs
+ */
+Jobs().forEach(function(j){
+    var job = require(path.join(__dirname, j));
     job.start();
 })
