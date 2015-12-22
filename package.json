@@ -1,0 +1,28 @@
+{
+  "name": "stage",
+  "version": "0.0.1",
+  "description": "Job dispatch stage.",
+  "main": "index.js",
+  "dependencies": {
+    "cron": "^1.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node index.js",
+    "test": "cd tests && mocha test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tvrcgo/stage.git"
+  },
+  "keywords": [
+    "cron",
+    "node.js"
+  ],
+  "author": "tvrcgo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tvrcgo/stage/issues"
+  },
+  "homepage": "https://github.com/tvrcgo/stage#readme"
+}
