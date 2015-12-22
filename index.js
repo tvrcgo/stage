@@ -11,7 +11,7 @@ function Jobs(parent){
     parent = parent || './jobs';
     var files = [];
     var list = fs.readdirSync(parent);
-    for(var item of list) {
+    list.forEach(function(item){
         var uri = path.join(parent, item);
         if (fs.statSync(uri).isDirectory()) {
             files = files.concat(Jobs(uri));
@@ -19,7 +19,7 @@ function Jobs(parent){
         else {
             files.push(uri);
         }
-    }
+    })
     return files;
 }
 
