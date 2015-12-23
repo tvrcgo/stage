@@ -10,7 +10,7 @@ git clone git@github.com:tvrcgo/stage.git
 ## Usage
 在 jobs 目录新建任务脚本，基本结构：
 ```js
-var Job = require('../lib/job');
+var Job = require('../lib/job').Job;
 
 module.exports = Job(function(){
     // tick run.
