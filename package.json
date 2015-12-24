@@ -8,7 +8,9 @@
   },
   "devDependencies": {},
   "scripts": {
-    "start": "node index.js",
+    "start": "pm2 start index.js -n stage --watch",
+    "stop": "pm2 stop stage && pm2 delete stage",
+    "dev": "node index.js",
     "test": "cd tests && mocha test.js"
   },
   "repository": {
