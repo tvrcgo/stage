@@ -10,7 +10,7 @@ git clone git@github.com:tvrcgo/stage.git
 ## Usage
 在 jobs 目录新建任务脚本，基本结构：
 ```js
-var Job = require('../lib/job');
+var Job = require('../lib/job').Job;
 
 module.exports = Job(function(){
     // tick run.
@@ -25,13 +25,6 @@ module.exports = Job(function(){
 module.exports = Job(function(){
 
 }, '*/2 * * * * *');
-```
-
-在指定时间运行一次
-```js
-module.exports = Job(function(){
-
-}, '0 0 0 31 12 2015');
 ```
 
 - 有关运行计划时间设置参考项目 [node-cron](https://github.com/ncb000gt/node-cron)
