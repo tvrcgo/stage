@@ -1,7 +1,10 @@
 'use strict';
 
-var Job = require('../lib/job').Job;
-
-module.exports = Job(function(){
+function run(){
     process.stdout.write('.')
-});
+};
+
+module.exports = {
+    main: run,
+    cron: '*/10 * * * * *'
+}
